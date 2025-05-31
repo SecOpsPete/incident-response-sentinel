@@ -89,7 +89,7 @@ Incident details provide visibility into:
 
 ![Affected Host](images/AffectedHost3.png)  
 
-==
+---
 
 ![Failed Attempts Summary](images/Nosuccess4.png)
 
