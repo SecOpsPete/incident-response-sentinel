@@ -88,6 +88,9 @@ Incident details provide visibility into:
 - Targeted user account (`AccountName`)
 
 ![Affected Host](images/AffectedHost3.png)  
+
+==
+
 ![Failed Attempts Summary](images/Nosuccess4.png)
 
 This correlation supports accurate scoping and impact analysis, enabling the security analyst to prioritize containment actions (e.g., isolating the host, blocking the IP).
