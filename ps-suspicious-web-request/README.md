@@ -129,7 +129,7 @@ DeviceProcessEvents
 | order by TimeGenerated
 ```
 
-![Execution Confirmation](images/DidItRun.png)
+![Execution Confirmation](images/DidItRun6.png)
 
 ✅ The logs confirm that `eicar.ps1` was executed.
 
