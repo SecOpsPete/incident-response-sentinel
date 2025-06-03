@@ -44,7 +44,7 @@ DeviceProcessEvents
 ```
 ---
 
-![Detection Query Results](images/IR_IMG1.png) <br><br>
+![Detection Query Results](images/IR_IMG1.png)<br><br>
 
 ---
 
