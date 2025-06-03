@@ -43,8 +43,8 @@ DeviceProcessEvents
     DeviceId
 ```
 
-![Detection Query Results](incident-response-sentinel/ps-suspicous-web-requeset/images/IR_IMG1.png)  
-![Process Detail](incident-response-sentinel/ps-suspicous-web-requeset/images/IR_IMG2.png)
+![Detection Query Results](images/IR_IMG1.png)  
+![Process Detail](images/IR_IMG2.png)
 
 This query filters events from PowerShell commands that reference `Invoke-WebRequest`, projecting relevant metadata that helps us identify the source system, user, and exact command executed.
 
@@ -71,7 +71,7 @@ After verifying that the query returns appropriate results, we create a **Schedu
 - **T1059.001** – PowerShell
 - **T1105** – Ingress Tool Transfer
 
-![Analytics Rule Creation](incident-response-sentinel/ps-suspicous-web-requeset/images/IR_IMG3.png)
+![Analytics Rule Creation](images/IR_IMG3.png)
 
 ---
 
@@ -88,7 +88,7 @@ This command:
 - Downloads a harmless `eicar.ps1` script from GitHub.
 - Saves it to `C:\ProgramData`, a commonly abused directory.
 
-![Simulated Execution](incident-response-sentinel/ps-suspicous-web-requeset/images/IR_IMG4.png)
+![Simulated Execution](images/IR_IMG4.png)
 
 ---
 
@@ -99,7 +99,7 @@ Once triggered, the alert appears in Microsoft Sentinel under **Incidents**. Beg
 1. Assign the incident to yourself and mark it as Active.
 2. Review the incident details to identify affected devices, users, and commands.
 
-![Incident Overview](incident-response-sentinel/ps-suspicous-web-requeset/images/map5.png)
+![Incident Overview](images/map5.png)
 
 **Simulated User Behavior**:
 Upon contacting the (simulated) user, they report attempting to install free software, possibly triggering the download of the script.
@@ -126,7 +126,7 @@ DeviceProcessEvents
 | order by TimeGenerated
 ```
 
-![Execution Confirmation](incident-response-sentinel/ps-suspicous-web-requeset/images/DidItRun.png)
+![Execution Confirmation](images/DidItRun.png)
 
 ✅ The logs confirm that `eicar.ps1` was executed.
 
