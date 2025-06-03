@@ -42,6 +42,7 @@ DeviceProcessEvents
     ReportId,
     DeviceId
 ```
+---
 
 ![Detection Query Results](images/IR_IMG1.png) <br><br>
 
