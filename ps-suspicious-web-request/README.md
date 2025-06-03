@@ -43,7 +43,10 @@ DeviceProcessEvents
     DeviceId
 ```
 
-![Detection Query Results](images/IR_IMG1.png)  
+![Detection Query Results](images/IR_IMG1.png) <br><br>
+
+---
+
 ![Process Detail](images/IR_IMG2.png)
 
 This query filters events from PowerShell commands that reference `Invoke-WebRequest`, projecting relevant metadata that helps us identify the source system, user, and exact command executed.
