@@ -8,6 +8,10 @@ This repository contains hands-on labs and detection engineering projects design
 
 ## 📂 Labs
 
+
+- ⚡ **[PowerShell Suspicious Web Request Detection](https://github.com/SecOpsPete/incident-response-sentinel/tree/main/ps-suspicious-web-request)**  
+  Simulates malicious use of PowerShell to download remote payloads using `Invoke-WebRequest`. Walks through Sentinel detection, incident investigation, and response using MDE and NIST 800-61 lifecycle.
+
 - 🔐 **[Brute Force Detection with Microsoft Sentinel](https://github.com/SecOpsPete/incident-response-sentinel/tree/main/brute-force-detection-sentinel)**  
   Detects repeated failed login attempts from the same remote IP address using KQL and Sentinel scheduled analytics rules, mapped to MITRE ATT&CK T1110 (Brute Force).
 
