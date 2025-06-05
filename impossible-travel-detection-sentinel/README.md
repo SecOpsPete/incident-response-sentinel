@@ -68,7 +68,10 @@ Once implemented, this rule generated an incident for further investigation.
 
 After detection, Microsoft Sentinel generated an incident based on our scheduled rule. The alert includes user identity, timestamps, and geolocation metadata.
 
-![Incident Details](images/IncidentDetails3.png)  
+![Incident Details](images/IncidentDetails3.png)<br><br>
+
+---
+
 ![Incident Map](images/IncidentMap3.png)
 
 ---
