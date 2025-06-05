@@ -9,6 +9,9 @@ This repository contains hands-on labs and detection engineering projects design
 ## 📂 Labs
 
 
+- 🌍 **[Impossible Travel Detection with Microsoft Sentinel](https://github.com/SecOpsPete/incident-response-sentinel/tree/main/impossible-travel-detection-sentinel)**  
+  Identifies suspicious sign-ins from geographically distant locations within short timeframes, suggesting potential credential compromise. Includes Sentinel rule creation, KQL investigation, and full incident response aligned with NIST 800-61.
+
 - ⚡ **[PowerShell Suspicious Web Request Detection](https://github.com/SecOpsPete/incident-response-sentinel/tree/main/ps-suspicious-web-request)**  
   Simulates malicious use of PowerShell to download remote payloads using `Invoke-WebRequest`. Walks through Sentinel detection, incident investigation, and response using MDE and NIST 800-61 lifecycle.
 
