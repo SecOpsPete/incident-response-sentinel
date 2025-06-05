@@ -6,15 +6,15 @@ This lab walks through the full lifecycle of a post-exploitation detection scena
 
 ## 🎯 Objective
 
-- Detect malicious or suspicious use of PowerShell for remote file download
-- Simulate the event on an MDE-onboarded system
-- Configure a detection rule in Microsoft Sentinel
-- Investigate the alert and associated artifacts
-- Execute containment, remediation, and post-incident actions
+- Detect malicious or suspicious use of PowerShell for remote file download  
+- Simulate the event on an MDE-onboarded system  
+- Configure a detection rule in Microsoft Sentinel  
+- Investigate the alert and associated artifacts  
+- Execute containment, remediation, and post-incident actions  
 
 ---
 
-## 🧠 Background & Threat Context
+## 1. 🧰 Preparation (NIST IR Step 1)
 
 Attackers frequently use legitimate system tools like PowerShell to carry out malicious activity once they have access to a host. A common tactic is to download scripts or binaries using commands such as `Invoke-WebRequest`, which blends in with normal administrative behavior. This is part of a broader technique known as **Living Off the Land Binaries (LOLBins)**, where attackers exploit built-in tools to avoid detection.
 
@@ -22,11 +22,14 @@ In this lab, we simulate such activity using a script named `eicar.ps1`—named 
 
 ---
 
-## 🛠️ Part 1: Create Detection Logic in Microsoft Sentinel
+## 2. 🔎 Detection and Analysis (NIST IR Step 2)
+
+### 🛠️ Create Detection Logic in Microsoft Sentinel
 
 We begin by crafting a **Kusto Query Language (KQL)** query to detect any execution of PowerShell or pwsh.exe that uses the `Invoke-WebRequest` command. This query will be validated in Log Analytics, then converted into a scheduled Sentinel analytics rule.
 
-### 🔍 KQL Detection Query
+#### 🔍 KQL Detection Query
+
 ```kusto
 DeviceProcessEvents
 | where DeviceName =~ "PVR-HUNTING2"
@@ -42,44 +45,38 @@ DeviceProcessEvents
     ReportId,
     DeviceId
 ```
----
 
-![Detection Query Results](images/IR_IMG1.png)<br><br>
-
----
-
+![Detection Query Results](images/IR_IMG1.png)  
 ![Process Detail](images/IR_IMG2.png)
 
 This query filters events from PowerShell commands that reference `Invoke-WebRequest`, projecting relevant metadata that helps us identify the source system, user, and exact command executed.
 
 ---
 
-## ⚙️ Part 2: Create the Scheduled Analytics Rule
-
-After verifying that the query returns appropriate results, we create a **Scheduled Query Rule** in Sentinel to automatically generate alerts.
+### ⚙️ Create the Scheduled Analytics Rule
 
 **Analytics Rule Settings**:
-- **Name**: PowerShell Suspicious Web Request
-- **Description**: Detects PowerShell usage of `Invoke-WebRequest` to download external content.
-- **Enable Rule**: ✅
-- **Schedule**: Run every 4 hours, look back over the last 24 hours.
-- **Stop running query after alert?** ✅
+- **Name**: PowerShell Suspicious Web Request  
+- **Description**: Detects PowerShell usage of `Invoke-WebRequest` to download external content.  
+- **Enable Rule**: ✅  
+- **Schedule**: Run every 4 hours, look back over the last 24 hours  
+- **Stop running query after alert?** ✅  
 - **Entity Mapping**:
-  - `Account`: Identifier = `AccountName`
-  - `Host`: Identifier = `DeviceName`
-  - `Process`: Identifier = `ProcessCommandLine`
-- **Incident Creation**: Automatically create incident on trigger
-- **Alert Grouping**: Group into a single incident every 24 hours
+  - `Account`: Identifier = `AccountName`  
+  - `Host`: Identifier = `DeviceName`  
+  - `Process`: Identifier = `ProcessCommandLine`  
+- **Incident Creation**: Automatically create incident on trigger  
+- **Alert Grouping**: Group into a single incident every 24 hours  
 
 **MITRE ATT&CK Categories**:
-- **T1059.001** – PowerShell
-- **T1105** – Ingress Tool Transfer
+- **T1059.001** – PowerShell  
+- **T1105** – Ingress Tool Transfer  
 
 ![Analytics Rule Creation](images/IR_IMG3.png)
 
 ---
 
-## 💣 Part 3: Simulate Attack — Triggering the Alert
+### 💣 Simulate Attack — Triggering the Alert
 
 Execute the following PowerShell command on the onboarded VM (`PVR-HUNTING2`) to simulate the attack:
 
@@ -87,35 +84,32 @@ Execute the following PowerShell command on the onboarded VM (`PVR-HUNTING2`) to
 powershell.exe -ExecutionPolicy Bypass -Command Invoke-WebRequest -Uri https://raw.githubusercontent.com/joshmadakor1/lognpacific-public/refs/heads/main/cyber-range/entropy-gorilla/eicar.ps1 -OutFile C:\programdata\eicar.ps1
 ```
 
-This command:
-- Uses `-ExecutionPolicy Bypass` to ignore script execution restrictions.
-- Downloads a harmless `eicar.ps1` script from GitHub.
-- Saves it to `C:\ProgramData`, a commonly abused directory.
-
 ![Simulated Execution](images/IR_IMG4.png)
 
 ---
 
-## 🕵️ Part 4: Investigate the Incident
+## 3. 🚨 Containment, Eradication, and Recovery (NIST IR Step 3)
+
+### 🕵️ Investigate the Incident
 
 Once triggered, the alert appears in Microsoft Sentinel under **Incidents**. Begin your investigation:
 
-1. Assign the incident to yourself and mark it as Active.
+1. Assign the incident to yourself and mark it as Active.  
 2. Review the incident details to identify affected devices, users, and commands.
 
 ![Incident Overview](images/map5.png)
 
-**Simulated User Behavior**:
+**Simulated User Behavior**:  
 Upon contacting the (simulated) user, they report attempting to install free software, possibly triggering the download of the script.
 
 **Entity Mapping Observed**:
-- PowerShell Suspicious Web Request was triggered on **1 device** by **1 user**.
-- The PowerShell command downloaded the following script:
+- PowerShell Suspicious Web Request was triggered on **1 device** by **1 user**.  
+- The PowerShell command downloaded the following script:  
   - URL: https://raw.githubusercontent.com/joshmadakor1/lognpacific-public/refs/heads/main/cyber-range/entropy-gorilla/eicar.ps1
 
 ---
 
-## 🧪 Part 5: Confirm Script Execution
+### 🧪 Confirm Script Execution
 
 To confirm whether the downloaded script was executed, run this query:
 
@@ -136,49 +130,52 @@ DeviceProcessEvents
 
 ---
 
-## 🧬 Technical Analysis of Script
+### 🧬 Technical Analysis of Script
 
 **eicar.ps1 Behavior**:
+
 ```powershell
 # Logs events and creates an EICAR test file at C:\ProgramData\EICAR.txt
 # Emulates benign but suspicious behavior typical of malware delivery scripts
 ```
 
-**Reverse Engineering Team Summary**:
+**Reverse Engineering Team Summary**:  
 > The PowerShell command (`powershell.exe -ExecutionPolicy Bypass -File C:\ProgramData\eicar.ps1`) strongly resembles malicious script deployment tactics. The script uses execution policy bypass and stores files in `C:\ProgramData`, aligning with known LOLBins abuse patterns. While this script only creates the EICAR string, such methods are frequently used in actual malware delivery and warrant investigation.
 
 ---
 
-## 🛡️ Part 6: Containment, Eradication, and Recovery
+### 🛡️ Containment Actions
 
-1. **Machine Isolation**:
-   - The affected machine was isolated via Defender for Endpoint to prevent lateral movement.
+1. **Machine Isolation**  
+   - The affected machine was isolated via Defender for Endpoint to prevent lateral movement.  
 
-2. **Antivirus Scan**:
-   - A full scan returned clean. No additional compromise detected.
-   - Isolation was lifted without requiring reimaging.
+2. **Antivirus Scan**  
+   - A full scan returned clean. No additional compromise detected.  
+   - Isolation was lifted without requiring reimaging.  
 
 ---
 
-## 📚 Part 7: Post-Incident Actions
+## 4. 📋 Post-Incident Activity (NIST IR Step 4)
 
-1. **Security Policy Hardening**:
-   - Began implementing policies to restrict PowerShell usage to approved accounts only.
+### 📚 Remediation and Awareness
 
-2. **User Awareness**:
-   - Simulated user underwent cybersecurity refresher training.
+1. **Security Policy Hardening**  
+   - Began implementing policies to restrict PowerShell usage to approved accounts only.  
 
-3. **Tooling & Training Enhancements**:
-   - Upgraded KnowBe4 phishing and behavior awareness training modules.
-   - Increased training frequency.
+2. **User Awareness**  
+   - Simulated user underwent cybersecurity refresher training.  
+
+3. **Tooling & Training Enhancements**  
+   - Upgraded KnowBe4 phishing and behavior awareness training modules.  
+   - Increased training frequency.  
 
 ---
 
 ## ✅ Closure
 
-- The incident was thoroughly investigated and documented.
-- Labeled as a **True Positive**, but no malicious impact occurred due to simulation control.
-- Final report saved and incident closed in Sentinel.
+- The incident was thoroughly investigated and documented.  
+- Labeled as a **True Positive**, but no malicious impact occurred due to simulation control.  
+- Final report saved and incident closed in Sentinel.  
 
 ---
 
