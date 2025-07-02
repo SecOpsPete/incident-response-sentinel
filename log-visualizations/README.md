@@ -72,7 +72,7 @@ DeviceLogonEvents
 ```
 
 🖼️ **Screenshot**:  
-![AzureAuthFailures](log-visualizations/AzureAuthFailures.png)
+![AzureAuthFailures](AzureAuthFailures.png)
 
 ---
 
@@ -94,7 +94,7 @@ SigninLogs
 ```
 
 🖼️ **Screenshot**:  
-![AzureAuthSuccess](log-visualizations/AzureAuthSuccess.png)
+![AzureAuthSuccess](AzureAuthSuccess.png)
 
 ---
 
@@ -119,7 +119,7 @@ MaliciousFlows
 ```
 
 🖼️ **Screenshot**:  
-![MaliciousTrafficFlow](log-visualizations/Malicious-Traffic.png)
+![MaliciousTrafficFlow](Malicious-Traffic.png)
 
 ---
 
@@ -143,7 +143,7 @@ AzureActivityRecords
 ```
 
 🖼️ **Screenshot**:  
-![ResourceCreation](log-visualizations/ResourceCreation.png)
+![ResourceCreation](ResourceCreation.png)
 
 ---
 
@@ -166,7 +166,7 @@ SigninLogs
 ```
 
 🖼️ **Screenshot**:  
-![VMAuthenticationFailures](log-visualizations/VMAuthentication-Failures.png)
+![VMAuthenticationFailures](VMAuthentication-Failures.png)
 
 ---
 
