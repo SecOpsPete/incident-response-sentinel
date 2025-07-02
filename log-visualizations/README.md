@@ -183,9 +183,5 @@ This lab highlights how Microsoft Sentinel transforms raw telemetry into geoloca
 **Peter Van Rossum**  
 Cybersecurity Analyst | GitHub: [@SecOpsPete](https://github.com/SecOpsPete)
 
----
 
-## 📝 License
-
-MIT License – free to use, modify, and share with credit.
 
