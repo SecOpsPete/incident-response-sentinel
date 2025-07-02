@@ -15,25 +15,6 @@ Each workbook in this lab visualizes a different type of security event such as 
 
 ---
 
-## 📂 Repository Structure
-
-```
-incident-response-sentinel/
-└── log-visualizations/
-    ├── AzureAuthFailures.kql
-    ├── AzureAuthFailures.png
-    ├── AzureAuthSuccess.kql
-    ├── AzureAuthSuccess.png
-    ├── MaliciousTrafficFlow.kql
-    ├── Malicious-Traffic.png
-    ├── ResourceCreation.kql
-    ├── ResourceCreation.png
-    ├── VMAuthenticationFailures.kql
-    └── VMAuthentication-Failures.png
-```
-
----
-
 ## 🧠 Understanding Sentinel’s Role
 
 Microsoft Sentinel provides unified visibility across your cloud and on-premise environments. It ingests logs through Data Connectors and stores them in a Log Analytics workspace where you can:
