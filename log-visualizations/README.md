@@ -170,15 +170,6 @@ SigninLogs
 
 ---
 
-## 🧪 Future Enhancements
-
-- Integrate **Analytics Rules** to alert on thresholds or patterns
-- Enrich with **Threat Intelligence** indicators
-- Use **Notebooks** to conduct post-incident forensic analysis
-- Map detections to **MITRE ATT&CK** techniques
-
----
-
 ## ✅ Summary
 
 This lab highlights how Microsoft Sentinel transforms raw telemetry into geolocation-driven insights. By leveraging the power of KQL, watchlists, and workbook visualizations, defenders can more easily identify threats, monitor behavior, and respond proactively.
