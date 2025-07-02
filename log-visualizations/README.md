@@ -56,7 +56,7 @@ Microsoft Sentinel provides unified visibility across your cloud and on-premise 
 
 ## 🌍 Attack Maps & Query Summaries
 
-### 🔴 Azure Authentication Failures (`AzureAuthFailures.kql`)
+### 🔴 Azure Authentication Failures
 
 📌 **Query Summary**:
 Uses `DeviceLogonEvents` where `ActionType == "LogonFailed"`, enriched with GeoIP watchlist to show failed logins by city/country.
@@ -76,7 +76,7 @@ DeviceLogonEvents
 
 ---
 
-### 🟢 Azure Authentication Successes (`AzureAuthSuccess.kql`)
+### 🟢 Azure Authentication Successes
 
 📌 **Query Summary**:
 Visualizes successful logins from `SigninLogs`, grouped by user and geolocation using built-in `LocationDetails`.
@@ -98,7 +98,7 @@ SigninLogs
 
 ---
 
-### ⚠️ Malicious Traffic Flows (`MaliciousTrafficFlow.kql`)
+### ⚠️ Malicious Traffic Flows
 
 📌 **Query Summary**:
 Parses `AzureNetworkAnalytics_CL` for `FlowType_s == "MaliciousFlow"` and applies `ipv4_lookup()` to locate attacker IPs.
@@ -123,7 +123,7 @@ MaliciousFlows
 
 ---
 
-### 🏗️ Resource Creation Activity (`ResourceCreation.kql`)
+### 🏗️ Resource Creation Activity
 
 📌 **Query Summary**:
 Detects successful resource creation operations by filtering `AzureActivity`, then geolocates IPs via watchlist.
@@ -147,7 +147,7 @@ AzureActivityRecords
 
 ---
 
-### 🔐 VM Authentication Failures (`VMAuthenticationFailures.kql`)
+### 🔐 VM Authentication Failures
 
 📌 **Query Summary**:
 Filters `SigninLogs` for failed logins excluding service principals, then groups and maps identity sources.
