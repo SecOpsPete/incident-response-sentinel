@@ -74,15 +74,14 @@ This query filters events from PowerShell commands that reference `Invoke-WebReq
 
 ---
 
-## 2.5 💣 Simulate Attack — Triggering the Alert
+### 💣 Simulate Attack — Triggering the Alert
 
 In order to generate log activity that will trigger an Incident in Sentinel, I executed the following PowerShell command on the onboarded VM (`PVR-HUNTING2`) to simulate the attack:
 
 ```powershell
 powershell.exe -ExecutionPolicy Bypass -Command Invoke-WebRequest -Uri https://raw.githubusercontent.com/joshmadakor1/lognpacific-public/refs/heads/main/cyber-range/entropy-gorilla/eicar.ps1 -OutFile C:\programdata\eicar.ps1
 ```
-
-## 3. 🚨 Containment, Eradication, and Recovery (NIST IR Step 3)
+---
 
 ### 🕵️ Investigate the Incident
 
@@ -145,6 +144,10 @@ DeviceProcessEvents
 
 ---
 
+## 3. 🚨 Containment, Eradication, and Recovery (NIST IR Step 3)
+
+<br>
+
 ### 🛡️ Containment and Remediation Actions
 
 1. **Machine Isolation**  
@@ -153,10 +156,12 @@ DeviceProcessEvents
 2. **Antivirus Scan**  
    - A full scan returned clean. No additional compromise detected.  
    - Isolation was lifted without requiring reimaging.  
+<br>
 
----
 
 ## 4. 📋 Post-Incident Activity (NIST IR Step 4)
+
+<br>
 
 ### 📚 Recommendations
 
