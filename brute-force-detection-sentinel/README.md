@@ -84,9 +84,9 @@ Once the rule is triggered, an incident is automatically created in Microsoft Se
 - Invesitage designation started
 
 ### Visualization of Entities Involved
-Based on the triggered Incident, these are the virtual addresses and remote ID addresses involved.
+Based on the triggered Incident, these are the virtual addresses and malicious remote ID addresses involved.
 
-![Query Results Visualization](images/NSGrule5.png)
+![Query Results Visualization](images/Visualization2.png)
 
 
 ### 🔗 Incident Generation
