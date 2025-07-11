@@ -115,22 +115,6 @@ Once fully investigated, the incident can be closed with a resolution reason, ma
 
 ---
 
-## 📁 Artifacts and File Structure
-
-- `detection-query.kql` – Reusable KQL script for brute force detection.
-- `images/` – Screenshot documentation of detection, rule configuration, and incident handling.
-
-Folder Structure:
-```
-incident-response-sentinel/
-└── brute-force-detection-sentinel/
-    ├── detection-query.kql
-    ├── images/
-    └── README.md
-```
-
----
-
 ## 📌 Summary
 
 This lab demonstrated how to:
