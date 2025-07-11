@@ -177,6 +177,7 @@ DeviceProcessEvents
 
 ## ✅ Closure
 
+- Implementation of a policy restricting the use of Powershell for non-essential users.
 - The incident was thoroughly investigated and documented.  
 - Labeled as a **True Positive**, but no malicious impact occurred due to simulation control.  
 - Final report saved and incident closed in Sentinel.  
