@@ -100,7 +100,7 @@ Based on the triggered Incident, these are the virtual addresses and malicious r
 
 Incident details provide visibility into:
 - Affected endpoint (`DeviceName`)
-- Suspected source of attack (`RemoteIP`)
+- Suspected source of attack (`RemoteIP`) There were four potentially malicious IPs detected (60.249.78.94, 37.48.249.144, 92.53.90.243, 81.215.213.170)
 - Targeted user account (`AccountName`)
 <br>
 
