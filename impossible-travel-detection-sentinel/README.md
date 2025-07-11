@@ -80,7 +80,11 @@ Once implemented, this rule generated an incident for further investigation.
 
 ### 📥 Incident Alert in Sentinel
 
-After detection, Microsoft Sentinel generated an incident based on our scheduled rule. The alert includes user identity, timestamps, and geolocation metadata.
+After detection, Microsoft Sentinel generated an incident based on our scheduled rule. The alert includes user identity, timestamps, and geolocation metadata. Then following steps were taken in Sentinel:
+- Incident Automatically Created
+- Incident assigned to self
+- Status Active
+- Invesitage designation started
 
 ![Incident Details](images/IncidentDetails3.png)<br><br>
 
