@@ -115,7 +115,7 @@ For this incident we performed the following isolation and eradication steps:
 
 ### Check for Successful Logons from Suspected Malicious Remote IPs <br>
 
-![Failed Attempts Summary](images/NoSuccessfulLogons.png)
+<img src="images/NoSuccessfulLogons.png" alt="Analytics Rule Settings" style="width:80%;">
 
 This confirmed that none of the brute force attempts achieved any logon status other than "LogonFailed".
 
