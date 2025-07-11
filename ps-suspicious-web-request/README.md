@@ -146,7 +146,6 @@ DeviceProcessEvents
 
 ## 3. 🚨 Containment, Eradication, and Recovery (NIST IR Step 3)
 
-<br>
 
 ### 🛡️ Containment and Remediation Actions
 
@@ -161,7 +160,6 @@ DeviceProcessEvents
 
 ## 4. 📋 Post-Incident Activity (NIST IR Step 4)
 
-<br>
 
 ### 📚 Recommendations
 
