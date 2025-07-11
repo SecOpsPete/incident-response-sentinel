@@ -143,7 +143,7 @@ DeviceProcessEvents
 
 ---
 
-### 🛡️ Containment Actions
+### 🛡️ Containment adn Remediation Actions
 
 1. **Machine Isolation**  
    - The affected machine was isolated via Defender for Endpoint to prevent lateral movement.  
@@ -156,7 +156,7 @@ DeviceProcessEvents
 
 ## 4. 📋 Post-Incident Activity (NIST IR Step 4)
 
-### 📚 Remediation and Awareness
+### 📚 Recommendations
 
 1. **Security Policy Hardening**  
    - Began implementing policies to restrict PowerShell usage to approved accounts only.  
