@@ -31,7 +31,6 @@ We begin by crafting a **Kusto Query Language (KQL)** query to detect any execut
 #### 🔍 KQL Detection Query
 
 ```kusto
-DeviceProcessEvents
 | where DeviceName =~ "PVR-HUNTING2"
 | where FileName in~ ("powershell.exe", "pwsh.exe")
 | where ProcessCommandLine has "Invoke-WebRequest"
