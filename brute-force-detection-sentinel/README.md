@@ -78,6 +78,16 @@ Created a new scheduled analytics rule in Microsoft Sentinel for brute force det
 ## 3. 🚨 Containment, Eradication, and Recovery (NIST IR Step 3)
 
 Once the rule is triggered, an incident is automatically created in Microsoft Sentinel. This serves as the point of handoff from detection to incident response.
+- Incident Automatically Created
+- Incident assigned to self
+- Status Active
+- Invesitage designation started
+
+### Visualization of Entities Involved
+Based on the triggered Incident, these are the virtual addresses and remote ID addresses involved.
+
+![Query Results Visualization](images/NSGrule5.png)
+
 
 ### 🔗 Incident Generation
 
