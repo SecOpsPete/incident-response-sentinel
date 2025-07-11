@@ -105,7 +105,7 @@ Incident details provide visibility into:
 
 ![Affected Host](images/AffectedHost3.png)  
 
-### Incident Response Steps
+### Containment, Eradication and Recovery (if necessary)
 For this incident we performed the following isolation and eradication steps:
  - Isolated devices in MDE on all affected VMs in the network
  - Performed Anti-Malware scan on affected devices via MDE
@@ -117,17 +117,15 @@ For this incident we performed the following isolation and eradication steps:
 
 <img src="images/NoSuccessfulLogons.png" alt="Analytics Rule Settings" style="width:80%;">
 
-This confirmed that none of the brute force attempts achieved any logon status other than "LogonFailed".
+This confirmed that none of the brute force attempts achieved any logon status other than "LogonFailed". As a result no systems required wiping or recovery procedures. 
 
 ---
 
 ## 4. 📋 Post-Incident Activity (NIST IR Step 4)
 
-Following containment and validation, incident handlers should document findings, response actions, and outcome.
+### Commenting and Documentation
 
-### 📝 Commenting and Documentation
-
-All observations and decisions made during the incident lifecycle can be logged within Sentinel’s Activity Log.
+Following containment and eradication, all incident lifecycle findings were documented in the Incident report in Sentinel. Response actions and outcome were also fully documented. 
 
 ![Activity Comment](images/ActivityComment6.png)
 
@@ -136,6 +134,12 @@ All observations and decisions made during the incident lifecycle can be logged 
 Once fully investigated, the incident can be closed with a resolution reason, marking the completion of the investigation lifecycle.
 
 ![Close Incident](images/closed7.png)
+
+### 📋 After Action Report and Recommendations
+
+After recovery from the event, a post-incident analysis recommended the following changes and updates to prevent similar incidents from occurring in the future:
+- NSG (Network Security Group) was locked down to prevent RDP attempts from the public internet.
+- Policy was proposed to require this on all of the network's VM.
 
 ---
 
