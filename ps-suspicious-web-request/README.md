@@ -115,6 +115,7 @@ Upon contacting the (simulated) user, they report attempting to install free sof
 To confirm whether the downloaded script was executed, run this query:
 
 ```kusto
+DeviceProcessEvents
 let TargetHostname = "pvr-hunting2";
 let ScriptNames = dynamic(["eicar.ps1"]);
 DeviceProcessEvents
@@ -127,7 +128,7 @@ DeviceProcessEvents
 
 ![Execution Confirmation](images/DidItRun6.png)
 
-✅ The logs confirm that `eicar.ps1` was executed.
+✅ The logs confirm that `eicar.ps1` was executed. 
 
 ---
 
