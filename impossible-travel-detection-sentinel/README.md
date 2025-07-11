@@ -31,21 +31,25 @@ Azure sign-in data is collected in the `SigninLogs` table and sent to **Log Anal
 
 ### 🔍 Initial Log Review in Log Analytics
 
-To begin, we review logon patterns for unusual geographic activity. A simple KQL query helps visualize where and when users authenticated:
+To begin, I reviewed logon patterns for unusual geographic activity. A simple KQL query helps visualize where and when users authenticated:
 
 ```kusto
 SigninLogs
 | where TimeGenerated > ago(7d)
 | summarize Count = count() by UserPrincipalName, City = tostring(parse_json(LocationDetails).city), State = tostring(parse_json(LocationDetails).state), Country = tostring(parse_json(LocationDetails).countryOrRegion)
 ```
+<br>
 
-![Login Data](images/LoginData1.png)
+![WhereAndWhen](images/WhereAndWhen.png)
 
 ---
 
-### ⚙️ Sentinel Scheduled Analytics Rule
-
-We define a rule that triggers if a user logs in from more than two distinct locations within a 7-day period:
+Then I developed (using ChatGPT) the full query to:
+- Look at sign-in events within the past 7 days,
+- Group the sign-ins by user and location,
+- Keep only the relevant fields (summarize),
+- and finally count how many distinct locations each user logged in from.
+<br>
 
 ```kusto
 let TimePeriodThreshold = timespan(7d); 
@@ -57,6 +61,16 @@ SigninLogs
 | summarize PotentialImpossibleTravelInstances = count() by UserPrincipalName, UserId
 | where PotentialImpossibleTravelInstances > NumberOfDifferentLocationsAllowed
 ```
+
+![Login Data](images/LoginData1.png)
+
+---
+
+### ⚙️ Sentinel Scheduled Analytics Rule
+
+Next I defined a rule that triggers if a user logs in from more than two distinct locations within a 7-day period:
+
+
 
 ![Query Rule](images/QueryRule2.png)
 
