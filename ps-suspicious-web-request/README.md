@@ -75,17 +75,13 @@ This query filters events from PowerShell commands that reference `Invoke-WebReq
 
 ---
 
-### 💣 Simulate Attack — Triggering the Alert
+## 2.5 💣 Simulate Attack — Triggering the Alert
 
 In order to generate log activity that will trigger an Incident in Sentinel, I executed the following PowerShell command on the onboarded VM (`PVR-HUNTING2`) to simulate the attack:
 
 ```powershell
 powershell.exe -ExecutionPolicy Bypass -Command Invoke-WebRequest -Uri https://raw.githubusercontent.com/joshmadakor1/lognpacific-public/refs/heads/main/cyber-range/entropy-gorilla/eicar.ps1 -OutFile C:\programdata\eicar.ps1
 ```
-
-![Simulated Execution](images/IR_IMG4.png)
-
----
 
 ## 3. 🚨 Containment, Eradication, and Recovery (NIST IR Step 3)
 
@@ -97,6 +93,12 @@ The simulated malicious PS script successfully triggered the Sentinel Analytics 
 2. I then reviewed the incident details to identify affected devices, users, and commands.
 
 ![Incident Overview](images/map5.png)
+
+<br>
+
+The event triggered an Incident in Sentinel as shown here:
+
+**![Simulated Execution](images/IR_IMG4.png)**
 
 **Simulated User Behavior**:  
 Upon contacting the (simulated) user, they report attempting to install free software, possibly triggering the download of the script.
