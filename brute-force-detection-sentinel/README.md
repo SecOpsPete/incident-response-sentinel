@@ -139,6 +139,7 @@ Once fully investigated, the incident can be closed with a resolution reason, ma
 
 After recovery from the event, a post-incident analysis recommended the following changes and updates to prevent similar incidents from occurring in the future:
 - NSG (Network Security Group) was locked down to prevent RDP attempts from the public internet.
+- Create NSG rule for inbound security rule to allow only remote user's unique remote IP for each VM assigned to user. 
 - Policy was proposed to require this on all of the network's VM.
 
 ---
