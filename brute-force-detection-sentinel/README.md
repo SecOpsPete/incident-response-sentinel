@@ -113,9 +113,11 @@ For this incident we performed the following isolation and eradication steps:
 
 ---
 
-![Failed Attempts Summary](images/Nosuccess4.png)
+### Check for Successful Logons from Suspected Malicious Remote IPs <br>
 
-This correlation supports accurate scoping and impact analysis, enabling the security analyst to prioritize containment actions (e.g., isolating the host, blocking the IP).
+![Failed Attempts Summary](images/NoSuccessfulLogons.png)
+
+This confirmed that none of the brute force attempts achieved any logon status other than "LogonFailed".
 
 ---
 
