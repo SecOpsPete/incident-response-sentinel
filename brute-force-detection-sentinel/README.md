@@ -58,15 +58,20 @@ This query filters for logon failures (`ActionType == "LogonFailed"`) within a 5
 | Severity              | Medium                                 |
 | MITRE Tactic          | Credential Access                      |
 | MITRE Technique       | T1110 – Brute Force                    |
-| Entity Mappings       | `DeviceName`, `RemoteIP`, `AccountName` |
+| Entity Mappings       | `DeviceName`, `RemoteIP`, `AccountName` | 
+<br>
 
-![Analytics Rule Settings](images/NSGrule5.png)
-
-### 📈 Log Analytics Visualization
-
+### 📈 Log Query Validation in Log Analytics
 The query was validated in Log Analytics to confirm accurate detection patterns before rule deployment.
 
-![Query Results Visualization](images/Visualization2.png)
+<img src="images/LogValidation.png" alt="Analytics Rule Settings" style="width:80%;">
+
+<br>
+
+### 📈 Create New Scheduled Rule - Sentinel Analytics 
+Created a new scheduled analytics rule in Microsoft Sentinel for brute force detection based on the above Log Analytics rule.
+
+![Query Results Visualization](images/NSGrule5.png)
 
 ---
 
