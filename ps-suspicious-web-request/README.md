@@ -143,7 +143,7 @@ DeviceProcessEvents
 
 ---
 
-### 🛡️ Containment adn Remediation Actions
+### 🛡️ Containment and Remediation Actions
 
 1. **Machine Isolation**  
    - The affected machine was isolated via Defender for Endpoint to prevent lateral movement.  
