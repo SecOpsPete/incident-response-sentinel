@@ -99,9 +99,8 @@ Based on the triggered Incident, these are the virtual addresses and malicious r
 ### 🧩 Triage and Entity Context
 
 Incident details provide visibility into:
-- Affected endpoint (`DeviceName`)
-- Suspected source of attack (`RemoteIP`) There were four potentially malicious IPs detected (60.249.78.94, 37.48.249.144, 92.53.90.243, 81.215.213.170)
-- Targeted user account (`AccountName`)
+- Three affected endpoints detected (misawa, tom-th-lab-01, vm2-hv)
+- There were four potentially malicious IPs detected (60.249.78.94, 37.48.249.144, 92.53.90.243, 81.215.213.170)
 <br>
 
 ![Affected Host](images/AffectedHost3.png)  
