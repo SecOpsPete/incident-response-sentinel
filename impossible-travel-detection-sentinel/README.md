@@ -86,6 +86,8 @@ After detection, Microsoft Sentinel generated an incident based on our scheduled
 
 ---
 
+I then created a visualization using Microsoft Sentinel to see the relationships of flagged results.
+
 ![Incident Map](images/IncidentMap3.png)
 
 ---
