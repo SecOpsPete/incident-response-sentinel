@@ -83,17 +83,18 @@ RULE TRIGGERED - Once the rule is triggered, an incident is automatically create
 - Status Active
 - Invesitage designation started
 
+### Incident Generation
+
+An alert is fired when matching events are found, leading to the generation of a Sentinel incident that includes contextual information such as host, IP address, and account name.
+
+![Alert Rule Incident](images/AlertRuleIncident1.png)
+
+
 ### Visualization of Entities Involved
 Based on the triggered Incident, these are the virtual addresses and malicious remote ID addresses involved.
 
 ![Query Results Visualization](images/Visualization2.png)
 
-
-### 🔗 Incident Generation
-
-An alert is fired when matching events are found, leading to the generation of a Sentinel incident that includes contextual information such as host, IP address, and account name.
-
-![Alert Rule Incident](images/AlertRuleIncident1.png)
 
 ### 🧩 Triage and Entity Context
 
@@ -101,8 +102,15 @@ Incident details provide visibility into:
 - Affected endpoint (`DeviceName`)
 - Suspected source of attack (`RemoteIP`)
 - Targeted user account (`AccountName`)
+<br>
 
 ![Affected Host](images/AffectedHost3.png)  
+
+### Incident Response Steps
+For this incident we performed the following isolation and eradication steps:
+ - Isolated devices in MDE on all affected VMs in the network
+ - Performed Anti-Malware scan on affected devices via MDE
+ - Search logs to ensure no successful login were made by malicious brute force attempts.
 
 ---
 
