@@ -54,7 +54,7 @@ This query filters for logon failures (`ActionType == "LogonFailed"`) within a 5
 | Rule Type             | Scheduled query                        |
 | Frequency             | Every 5 hours                          |
 | Lookup Period         | Last 5 hours                           |
-| Trigger Threshold     | Number of results > 0                  |
+| Trigger Threshold     | Number of results > 10                  |
 | Severity              | Medium                                 |
 | MITRE Tactic          | Credential Access                      |
 | MITRE Technique       | T1110 – Brute Force                    |
