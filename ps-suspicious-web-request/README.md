@@ -24,7 +24,7 @@ In this lab, we simulate such activity using a script named `eicar.ps1`—named 
 
 ## 2. 🔎 Detection and Analysis (NIST IR Step 2)
 
-### 🛠️ Create Detection Logic in Microsoft Sentinel
+### 🛠️ Create Detection Logic using Log Analytics (Azure)
 
 We begin by crafting a **Kusto Query Language (KQL)** query to detect any execution of PowerShell or pwsh.exe that uses the `Invoke-WebRequest` command. This query will be validated in Log Analytics, then converted into a scheduled Sentinel analytics rule.
 
