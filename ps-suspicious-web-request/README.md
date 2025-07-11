@@ -77,7 +77,7 @@ This query filters events from PowerShell commands that reference `Invoke-WebReq
 
 ### 💣 Simulate Attack — Triggering the Alert
 
-Execute the following PowerShell command on the onboarded VM (`PVR-HUNTING2`) to simulate the attack:
+In order to generate log activity that will trigger an Incident in Sentinel, I executed the following PowerShell command on the onboarded VM (`PVR-HUNTING2`) to simulate the attack:
 
 ```powershell
 powershell.exe -ExecutionPolicy Bypass -Command Invoke-WebRequest -Uri https://raw.githubusercontent.com/joshmadakor1/lognpacific-public/refs/heads/main/cyber-range/entropy-gorilla/eicar.ps1 -OutFile C:\programdata\eicar.ps1
