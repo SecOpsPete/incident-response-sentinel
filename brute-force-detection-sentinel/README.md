@@ -131,7 +131,7 @@ Following containment and eradication, all incident lifecycle findings were docu
 
 ### 🗃️ Closing the Incident
 
-Once fully investigated, the incident can be closed with a resolution reason, marking the completion of the investigation lifecycle.
+Once fully investigated, the incident categorized as TRUE POSITIVE and was closed with a detailed INCIDENT ACTIVITY LOG in Sentinel, marking the completion of the investigation lifecycle.
 
 ![Close Incident](images/closed7.png)
 
