@@ -132,7 +132,7 @@ SigninLogs
 - Labeled as a **True Positive** incident  
 - No signs of lateral movement found
 
-To further investigate possible malicious follow-up behavior, I queried related Azure activity:
+To further contain possible malicious follow-up behavior, I queried related Azure activity:
 
 ```kusto
 AzureActivity
