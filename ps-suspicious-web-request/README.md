@@ -167,7 +167,7 @@ DeviceProcessEvents
    - Began implementing policies to restrict PowerShell usage to approved accounts only.  
 
 2. **User Awareness**  
-   - Simulated user underwent cybersecurity refresher training.  
+   - Required affected user undergo cybersecurity refresher training.  
 
 3. **Tooling & Training Enhancements**  
    - Upgraded KnowBe4 phishing and behavior awareness training modules.  
