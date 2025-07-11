@@ -52,7 +52,7 @@ This query filters events from PowerShell commands that reference `Invoke-WebReq
 
 ---
 
-### ⚙️ Create a Scheduled Analytics Rule in Sentinel (Using Validated Query
+### ⚙️ Create a Scheduled Analytics Rule in Sentinel (Using Validated Query)
 
 **Analytics Rule Settings**:
 - **Name**: PowerShell Suspicious Web Request  
