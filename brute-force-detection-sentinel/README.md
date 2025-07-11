@@ -23,7 +23,7 @@ The objective of this lab is to establish proactive monitoring within Microsoft 
 
 As part of the preparation phase, ensure the following controls and logging mechanisms are in place:
 
-- Azure Defender and Microsoft Defender for Endpoint are integrated with Microsoft Sentinel.
+- Microsoft Defender for Endpoint is integrated with Microsoft Sentinel.
 - Logging is enabled for sign-in events, including successful and failed logon attempts.
 - Sentinel workspace is properly configured with an Analytics Rules engine and connected log sources.
 - Access permissions are established for creating and managing scheduled query rules.
