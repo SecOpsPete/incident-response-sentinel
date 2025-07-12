@@ -107,7 +107,7 @@ Incident details provide visibility into:
 
 ## 3. 🚨 Containment, Eradication, and Recovery (NIST IR Step 3)
 <br>
-For this incident we performed the following isolation and eradication steps:
+For this incident I performed the following isolation and eradication steps:
  - Isolated devices in MDE on all affected VMs in the network
  - Performed Anti-Malware scan on affected devices via MDE
  - Search logs to ensure no successful login were made by malicious brute force attempts.
