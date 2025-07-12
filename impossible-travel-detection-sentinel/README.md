@@ -104,7 +104,7 @@ I then created a visualization using Microsoft Sentinel to see the relationships
 
 **User:** `8c9531dd55d5d979611a18cec5947654ff7d25aa403fe8bf026dddbdb801aace@lognpacific.com`
 
-Further analysis was required to make the determination the locations where each individual account had been logging in from to determine whether the alert results were indeed concerning. I ran the following query (using ChatGPT) to assess logins for this specific account:
+Further analysis was required to make the determination the locations where each individual account had been logging in from to determine whether the alert results were indeed concerning. I ran the following query (using ChatGPT) to assess logins for each suspect account:
 
 ```kusto
 let TimePeriodThreshold = timespan(7d); 
