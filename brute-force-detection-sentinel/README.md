@@ -75,7 +75,7 @@ Created a new scheduled analytics rule in Microsoft Sentinel for brute force det
 
 ---
 
-## 3. 🚨 Containment, Eradication, and Recovery (NIST IR Step 3)
+### 🔎 Alert Triage
 
 RULE TRIGGERED - Once the rule is triggered, an incident is automatically created in Microsoft Sentinel. This serves as the point of handoff from detection to incident response.
 - Incident Automatically Created
@@ -96,7 +96,7 @@ Based on the triggered Incident, these are the virtual addresses and malicious r
 ![Query Results Visualization](images/Visualization2.png)
 
 
-### 🧩 Triage and Entity Context
+### 🧩 Entity Context
 
 Incident details provide visibility into:
 - Three affected endpoints detected (misawa, tom-th-lab-01, vm2-hv)
@@ -105,7 +105,8 @@ Incident details provide visibility into:
 
 ![Affected Host](images/AffectedHost3.png)  
 
-### Containment, Eradication and Recovery (if necessary)
+## 3. 🚨 Containment, Eradication, and Recovery (NIST IR Step 3)
+<br>
 For this incident we performed the following isolation and eradication steps:
  - Isolated devices in MDE on all affected VMs in the network
  - Performed Anti-Malware scan on affected devices via MDE
