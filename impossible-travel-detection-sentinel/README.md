@@ -151,6 +151,9 @@ AzureActivity
 ### ✅ No suspicious or unauthorized activity was identified beyond the initial anomaly
 <br>
 
+### Commenting, Documentation and Incident Closing
+
+Following containment and eradication, all incident lifecycle findings were documented in the Incident report in Sentinel. Response actions and outcome were also fully documented. Once fully investigated, the incident categorized as TRUE POSITIVE and was closed with a detailed INCIDENT ACTIVITY LOG in Sentinel, marking the completion of the investigation lifecycle.
 
 ---
 
