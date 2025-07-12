@@ -32,7 +32,7 @@ As part of the preparation phase, ensure the following controls and logging mech
 
 ## 2. 🔎 Detection and Analysis (NIST IR Step 2)
 
-In this stage, we define a query to detect brute force attempts based on repeated failed logins and then configure an alert rule to automate detection.
+In this stage, I defined a query to detect brute force attempts based on repeated failed logins and then configure an alert rule to automate detection.
 
 ### 📊 KQL Detection Logic
 
