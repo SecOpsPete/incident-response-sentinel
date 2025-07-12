@@ -137,6 +137,7 @@ It was determined there was one user account that met the criteria for a TRUE PO
 - **User account disabled** in Entra ID  
 - Labeled as a **True Positive** incident  
 - No signs of lateral movement found
+<br>
 
 To further contain possible malicious follow-up behavior, I queried related Azure activity:
 
@@ -147,7 +148,9 @@ AzureActivity
 
 ![Other User Activity](images/OtherUserActivity5.png)
 
-No suspicious or unauthorized activity was identified beyond the initial anomaly.
+### ✅ No suspicious or unauthorized activity was identified beyond the initial anomaly
+<br>
+
 
 ---
 
