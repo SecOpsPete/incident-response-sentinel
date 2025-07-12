@@ -165,7 +165,7 @@ AzureActivity
   Consider creating a dashboard to continuously monitor anomalous travel patterns.
 
 - **User Awareness**:  
-  Educate users about risks of VPN usage, account sharing, and credential security.
+  Educate users about risks of VPN usage (can bypass geo-based detections), account sharing, and credential security.
 
 - **Documentation**:  
   Add incident findings and actions to the Sentinel case record for future reference.
