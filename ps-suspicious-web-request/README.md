@@ -94,7 +94,7 @@ The simulated malicious PS script successfully triggered the Sentinel Analytics 
 
 <br>
 
-Event details on Microsoft Sentinel incident page:
+### 🔎 Event details on Microsoft Sentinel incident page:
 
 **![Simulated Execution](images/IR_IMG4.png)**
 
