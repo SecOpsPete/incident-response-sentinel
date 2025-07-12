@@ -117,6 +117,8 @@ SigninLogs
 
 **Findings:**
 
+It was determined there was one user account that met the criteria for a TRUE POSITIVE:
+
 | Timestamp                  | Location       |
 |----------------------------|----------------|
 | 6/5/2025, 1:41:47 AM       | Los Angeles, CA, US |
