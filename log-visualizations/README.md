@@ -174,7 +174,7 @@ SigninLogs
 
 This lab highlights how Microsoft Sentinel transforms raw telemetry into geolocation-driven insights. By leveraging the power of KQL, watchlists, and workbook visualizations, defenders can more easily identify threats, monitor behavior, and respond proactively.
 
-> 📍 Every map here was built from real or simulated logs using Microsoft-native tools — no third-party ingestion required.
+> 📍 Every map here was built from real logs using Microsoft-native tools — no third-party ingestion required.
 
 ---
 
