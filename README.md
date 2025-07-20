@@ -1,4 +1,4 @@
-# 🧠 Incident Response with Microsoft Sentinel
+# 🧠 Incident Response Labs
 
 This repository contains hands-on labs and detection engineering projects designed to simulate incident response workflows using Microsoft Sentinel. Each lab focuses on a specific threat scenario and aligns with the NIST 800-61 incident handling lifecycle, including preparation, detection, analysis, containment, and remediation.
 
@@ -20,6 +20,10 @@ This repository contains hands-on labs and detection engineering projects design
 
 - 🗺️ **[Log Visualizations with Microsoft Sentinel](https://github.com/SecOpsPete/incident-response-sentinel/tree/main/log-visualizations)**  
   Geolocates authentication failures, malicious traffic, and unauthorized resource creation using custom KQL queries, IP enrichment with a geoip watchlist, and Sentinel workbook heatmaps. Supports visual threat analysis and correlation of log data across Entra ID and Azure infrastructure.
+
+- 🧠 **[UnInstDaemon.exe High CPU Incident Response](https://github.com/SecOpsPete/incident-response-sentinel/tree/main/the-daemon-that-wouldnt-quit)**  
+  Investigates a suspicious Microsoft-signed executable (`UnInstDaemon.exe`) running from the Temp directory with excessive CPU usage. Walks through process triage, signature validation, VirusTotal analysis, Windows update correlation, and forensic cleanup. A complete Windows IR drill with tooling, registry and persistence checks, and lessons learned — aligned with real-world SOC response        practices.
+
 
 ---
 
