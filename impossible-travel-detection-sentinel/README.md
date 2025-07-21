@@ -157,19 +157,24 @@ Following containment and eradication, all incident lifecycle findings were docu
 
 ---
 
-## 4. 📋 Post-Incident Activity (NIST IR Step 4)
+### 📋 Post-Incident Activity (NIST IR Step 4)  
+🛠️ **Lessons Learned & Recommendations**
 
-### 🛠️ Lessons Learned & Recommendations
+**Policy Considerations:**  
+While geo-fencing cannot be enabled in the current environment, it’s highly recommended in enterprise deployments to restrict authentication by country or region. This reduces the risk of credential misuse from high-risk geographies.
 
-- **Policy Considerations**:  
-  While geo-fencing cannot be enabled in the current environment, it’s highly recommended in enterprise deployments to restrict authentication by country or region.
+**Logging Enhancements:**  
+Consider building a dashboard to continuously monitor anomalous travel patterns using enriched sign-in data. Incorporate logic to correlate sign-ins across cities, timestamps, and known infrastructure to help prioritize high-fidelity alerts.
 
-- **Logging Enhancements**:  
-  Consider creating a dashboard to continuously monitor anomalous travel patterns.
+**VPN Usage – Analyst Considerations:**  
+VPNs and cloud proxies can obscure a user’s true location, frequently causing false positives in impossible travel alerts. Analysts should take the following steps to reduce noise and improve detection accuracy:
+- **Tag known corporate VPN exit nodes** using IP watchlists and enrich sign-in logs accordingly.
+- **Cross-reference sign-ins by session ID, device ID, or user agent**—if the same session appears in two distant locations within a short time, it’s likely a VPN, not a breach.
+- **Flag commercial VPN or anonymizer IPs** using threat intelligence feeds or Microsoft’s location context enrichment (if available).
+- **Consider behavior continuity**—smooth, uninterrupted sign-ins across locations often indicate VPN use rather than credential theft.
+- **Document known false positive patterns** and refine KQL queries or analytics rules to exclude these where appropriate.
 
-- **User Awareness**:  
-  Educate users about risks of VPN usage (can bypass geo-based detections), account sharing, and credential security.
-
+These techniques help ensure analysts focus on true positives and reduce alert fatigue in geo-based anomaly detection.
 
 ---
 
