@@ -18,7 +18,7 @@ This lab walks through the full lifecycle of a post-exploitation detection scena
 
 Attackers frequently use legitimate system tools like PowerShell to carry out malicious activity once they have access to a host. A common tactic is to download scripts or binaries using commands such as `Invoke-WebRequest`, which blends in with normal administrative behavior. This is part of a broader technique known as **Living Off the Land Binaries (LOLBins)**, where attackers exploit built-in tools to avoid detection.
 
-In this lab, we simulate such activity using a script named `eicar.ps1`—named after the harmless EICAR test file—to safely emulate malicious behavior. The activity will be detected using Microsoft Defender for Endpoint, which forwards telemetry to a Log Analytics workspace. Microsoft Sentinel consumes this data, allowing us to write detection rules and respond to suspicious activity through a centralized SIEM interface.
+In this lab, I simulate such activity using a script named `eicar.ps1`—named after the harmless EICAR test file—to safely emulate malicious behavior. The activity will be detected using Microsoft Defender for Endpoint, which forwards telemetry to a Log Analytics workspace. Microsoft Sentinel consumes this data, allowing me to write detection rules and respond to suspicious activity through a centralized SIEM interface.
 
 ---
 
@@ -26,7 +26,7 @@ In this lab, we simulate such activity using a script named `eicar.ps1`—named 
 
 ### 🛠️ Create and Validate Detection Logic using Log Analytics (Azure)
 
-We begin by crafting a **Kusto Query Language (KQL)** query to detect any execution of PowerShell or pwsh.exe that uses the `Invoke-WebRequest` command. This query will be validated in Log Analytics, then converted into a scheduled Sentinel analytics rule.
+I began by crafting a **Kusto Query Language (KQL)** query to detect any execution of PowerShell or pwsh.exe that uses the `Invoke-WebRequest` command. This query will be validated in Log Analytics, then converted into a scheduled Sentinel analytics rule.
 
 #### 🔍 KQL Detection Query
 
@@ -47,7 +47,7 @@ We begin by crafting a **Kusto Query Language (KQL)** query to detect any execut
 
 ![Process Detail](images/IR_IMG2.png)
 
-This query filters events from PowerShell commands that reference `Invoke-WebRequest`, projecting relevant metadata that helps us identify the source system, user, and exact command executed.
+This query filters events from PowerShell commands that reference `Invoke-WebRequest`, projecting relevant metadata that helped me to identify the source system, user, and exact command executed.
 
 ---
 
