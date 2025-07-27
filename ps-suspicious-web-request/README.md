@@ -110,7 +110,7 @@ Upon contacting the (simulated) user, they report attempting to install free sof
 
 ### 🧪 Confirm Script Execution
 
-To confirm whether the downloaded script was executed, run this query:
+To confirm whether the downloaded script was executed, I ran this query:
 
 ```kusto
 DeviceProcessEvents
