@@ -1,4 +1,4 @@
-# 🧪 Threat Detection & Incident Response Lab: PowerShell Suspicious Web Request via Invoke-WebRequest
+# 🧪 PowerShell Suspicious Web Request Detection
 
 This lab walks through the full lifecycle of a post-exploitation detection scenario where PowerShell is used to download a script from a remote location using `Invoke-WebRequest`. It demonstrates how to detect, investigate, and respond to such activity using Microsoft Defender for Endpoint (MDE), Microsoft Sentinel, and the NIST 800-61 Incident Response framework.
 
