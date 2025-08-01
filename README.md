@@ -18,7 +18,7 @@ This repository contains hands-on labs and detection engineering projects design
 - 🔐 **[Brute Force Detection with Microsoft Sentinel](https://github.com/SecOpsPete/incident-response-sentinel/tree/main/brute-force-detection-sentinel)**  
   Detects repeated failed login attempts from the same remote IP address using KQL and Sentinel scheduled analytics rules, mapped to MITRE ATT&CK T1110 (Brute Force).
 
-- 🗺️ **[Log Visualizations with Microsoft Sentinel](https://github.com/SecOpsPete/incident-response-sentinel/tree/main/log-visualizations)**  
+- 🗺️ **[Sentinel Log Visualizations & Attack Maps](https://github.com/SecOpsPete/incident-response-sentinel/tree/main/log-visualizations)**  
   Geolocates authentication failures, malicious traffic, and unauthorized resource creation using custom KQL queries, IP enrichment with a geoip watchlist, and Sentinel workbook heatmaps. Supports visual threat analysis and correlation of log data across Entra ID and Azure infrastructure.
 
 - 🧠 **[UnInstDaemon.exe High CPU Incident Response](https://github.com/SecOpsPete/incident-response-sentinel/tree/main/the-daemon-that-wouldnt-quit)**  
