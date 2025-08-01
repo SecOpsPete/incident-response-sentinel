@@ -1,4 +1,4 @@
-# 🛡️ Incident Response Case File: UnInstDaemon.exe High CPU Event
+# 🛡️ UnInstDaemon.exe High CPU Event
 
 **Date Identified:** July 19, 2025  
 **Analyst:** Peter Van Rossum  
