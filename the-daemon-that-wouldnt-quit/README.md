@@ -148,17 +148,25 @@ Test-Path "C:\Users\peter\AppData\Local\Temp\bwpce2d3397-4295-4a09-89aa-bba6e451
 
 ---
 
-## 4. 📋 Post-Incident Activity (NIST IR Step 4)  
+## 📋 Post-Incident Activity (NIST IR Step 4)
 
-### 🧠 Root Cause Analysis
-The high CPU activity observed on the endpoint was traced to a legitimate Microsoft-signed binary, UnInstDaemon.exe, located in %TEMP%. This executable is associated with the Microsoft Update Health Tools, typically installed during Servicing Stack Updates or cumulative patch cycles. The process likely failed to terminate cleanly following an update, resulting in abnormal resource usage.
+---
 
-### 📚 Lessons Learned
-Microsoft system update components may spawn temporary executables in unconventional paths (e.g., %TEMP%), which can resemble suspicious activity. Legitimate processes may exhibit behavioral overlaps with malware (e.g., unsigned cleanup routines, high CPU usage, persistence-like execution), reinforcing the need for signature validation and behavior correlation before response.
+### 🧠 Root Cause Analysis  
+The high CPU activity observed on the endpoint was traced to a **legitimate Microsoft-signed binary**, `UnInstDaemon.exe`, located in `%TEMP%`. This executable is associated with **Microsoft Update Health Tools**, typically deployed during **Servicing Stack Updates** or **cumulative patch cycles**. The process likely failed to terminate cleanly following an update, resulting in abnormal resource consumption.
 
+---
 
-### 📌 Recommendations
-Implement a scheduled script to monitor and alert on persistent high CPU usage by uncommon processes, with validation checks for known update components. Update internal IR playbooks to include a reference list of trusted Microsoft update-related binaries (e.g., UnInstDaemon.exe). Provide brief refresher training to analysts on interpreting signed binaries and Windows Update artifacts during triage.
+### 📚 Lessons Learned  
+Microsoft system update components may spawn **temporary executables in nonstandard paths** (e.g., `%TEMP%`), which can mimic indicators of compromise. Legitimate processes can also demonstrate **behavioral overlaps with malware** — such as unsigned cleanup routines, elevated CPU usage, and persistence-like execution patterns. This reinforces the importance of **digital signature validation**, **contextual analysis**, and **correlation with known update behavior** during incident triage.
+
+---
+
+### 📌 Recommendations  
+- Implement a scheduled script to monitor and alert on **persistent high CPU usage from uncommon processes**, incorporating validation checks against known Microsoft update artifacts.  
+- Update internal incident response playbooks with a **reference list of trusted update-related binaries** (e.g., `UnInstDaemon.exe`) to support faster triage.  
+- Deliver refresher training to SOC analysts on **identifying and interpreting Windows Update artifacts**, including signature trust evaluation and execution context.
+
 
 ---
 
