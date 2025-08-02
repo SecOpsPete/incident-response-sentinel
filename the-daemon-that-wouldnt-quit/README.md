@@ -4,12 +4,6 @@
 **Analyst:** Peter Van Rossum  
 **System:** Windows 11 Pro (User: `peter`)  
 
----
-
-## 1. 🧰 Preparation (NIST IR Step 1)
-
-In alignment with organizational incident response policy and standard operating procedures, a scheduled system health and resource usage assessment was conducted on the workstation. This proactive measure supports baseline performance monitoring, facilitates early detection of anomalies, and ensures host readiness for potential investigative or containment actions. 
-
 ### 🧩 Incident Summary
 
 A suspicious process named `UnInstDaemon.exe` was discovered consuming over **2,000 seconds of CPU time**. It was located in a temporary directory:
@@ -20,11 +14,18 @@ C:\Users\peter\AppData\Local\Temp\bwpce2d3397-4295-4a09-89aa-bba6e45110d5\UnInst
 
 The filename, CPU behavior, and location initially raised concerns about malware.
 
+
+---
+
+## 1. 🧰 Preparation (NIST IR Step 1)
+
+In alignment with organizational incident response policy and standard operating procedures, a scheduled system health and resource usage assessment was conducted on the workstation. This proactive measure supports baseline performance monitoring, facilitates early detection of anomalies, and ensures host readiness for potential investigative or containment actions. 
+
 ---
 
 ## 2. 🔎 Detection and Analysis (NIST IR Step 2)
 
-### 🔹 Initial Discovery
+### 📌 Initial Discovery
 
 - Observed abnormal CPU usage using PowerShell:
   ```powershell
@@ -57,7 +58,7 @@ The filename, CPU behavior, and location initially raised concerns about malware
 
 ---
 
-## 🧩 Triage & System Correlation
+### 🧩 Triage & System Correlation
 
 ### 🔹 Application Install Review
 
