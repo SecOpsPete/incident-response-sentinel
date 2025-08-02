@@ -6,7 +6,11 @@
 
 ---
 
-## 🧩 Incident Summary
+## 1. 🧰 Preparation (NIST IR Step 1)
+
+In alignment with organizational incident response policy and standard operating procedures, a scheduled system health and resource usage assessment was conducted on the workstation. This proactive measure supports baseline performance monitoring, facilitates early detection of anomalies, and ensures host readiness for potential investigative or containment actions. 
+
+### 🧩 Incident Summary
 
 A suspicious process named `UnInstDaemon.exe` was discovered consuming over **2,000 seconds of CPU time**. It was located in a temporary directory:
 
@@ -18,7 +22,7 @@ The filename, CPU behavior, and location initially raised concerns about malware
 
 ---
 
-## 🧪 Investigation Timeline
+## 2. 🔎 Detection and Analysis (NIST IR Step 2)
 
 ### 🔹 Initial Discovery
 
@@ -78,7 +82,7 @@ The filename, CPU behavior, and location initially raised concerns about malware
 
 ---
 
-## 🧼 Remediation Actions Taken
+## 3. 🚨 Containment, Eradication, and Recovery (NIST IR Step 3)
 
 ### 🔸 1. Kill the Process
 
@@ -132,7 +136,7 @@ Test-Path "C:\Users\peter\AppData\Local\Temp\bwpce2d3397-4295-4a09-89aa-bba6e451
 
 ---
 
-## 📅 Correlated Activity Timeline
+### 📅 Correlated Activity Timeline
 
 | Date        | Event Type         | Details |
 |-------------|--------------------|---------|
@@ -143,13 +147,17 @@ Test-Path "C:\Users\peter\AppData\Local\Temp\bwpce2d3397-4295-4a09-89aa-bba6e451
 
 ---
 
-## 🧠 Root Cause Analysis
+## 4. 📋 Post-Incident Activity (NIST IR Step 4)  
 
-### 🔍 Leading Theory: **Windows Update Health Tools**
+### 🧠 Root Cause Analysis
+The high CPU activity observed on the endpoint was traced to a legitimate Microsoft-signed binary, UnInstDaemon.exe, located in %TEMP%. This executable is associated with the Microsoft Update Health Tools, typically installed during Servicing Stack Updates or cumulative patch cycles. The process likely failed to terminate cleanly following an update, resulting in abnormal resource usage.
 
-- This tool is designed to prep systems for major updates and often drops cleanup executables in Temp.
-- The file was **Microsoft-signed**, located in `%TEMP%`, and matched the **Update Health Tools** install date.
-- The process likely failed to exit cleanly after a patch cycle or component servicing event, causing CPU resource exhaustion.
+### 📚 Lessons Learned
+Microsoft system update components may spawn temporary executables in unconventional paths (e.g., %TEMP%), which can resemble suspicious activity. Legitimate processes may exhibit behavioral overlaps with malware (e.g., unsigned cleanup routines, high CPU usage, persistence-like execution), reinforcing the need for signature validation and behavior correlation before response.
+
+
+### 📌 Recommendations
+Implement a scheduled script to monitor and alert on persistent high CPU usage by uncommon processes, with validation checks for known update components. Update internal IR playbooks to include a reference list of trusted Microsoft update-related binaries (e.g., UnInstDaemon.exe). Provide brief refresher training to analysts on interpreting signed binaries and Windows Update artifacts during triage.
 
 ---
 
